@@ -1,31 +1,34 @@
-package sec03.exam01;
+package car.racing;
 
 public class Main {
-
 	public static void main(String[] args) {
-		int gasTank = 100;
-		int minGas = 20;
-		int numOfRound = 20;
-		Ca_r hyundai = new Ca_r(gasTank, minGas,
-				"Hyundai", "Yellow");
+		int totalRound = 30;
 		int numOfRound = 0;
-		while(numOfRound < numOfRounds)
-		{
+		
+		Tire tire = new tire();
+		car car = new car();
+		
+		while(numOfRound < totalRound) {
 			numOfRound++;
 			
-			if(hyundai.IsLeftGas()) {
-				hyundai.RunOneRound();
+			if(numOfRound == 20)
+				Env.isRain = true;
+			
+			System.out.println("Round : " + numOfRound);
+			
+			if(!car.CheckTire()) {
+				if(Env.isRain) {
+					tire = new WetTire(100, 30);
+					System.out.println("WetTire change!!");
+				}
+				else {
+					tire = new DryTire(100,15);
+					System.out.println("DryTire change!!");
+				}
+//				Tire tire = new Tire(100, 15);
+				car.ChangeTire(tire);
 			}
-			else {
-				hyundai.AddGas(gasTank);
-			}
+			car.Run();
 		}
-		static void ShowNumberOfCar();
-		
-		hyundai.Plus(1,2);
-		hyundai.Plus(1.0, 2);
-		hyundai.Plus(1,  2.0);
-		hyundai.Plus(1);
 	}
-
 }
