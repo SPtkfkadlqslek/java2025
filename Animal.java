@@ -1,10 +1,5 @@
-package exam03;
+package exam05;
 
 public class Animal {
-	boolean IsHealthy() {
-		return true;
-		
-	}
-	
-	void Heal() {}
+
 }
