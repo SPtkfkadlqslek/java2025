@@ -1,26 +1,32 @@
-package exam04;
+package exam06;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Main {
-
 	public static void main(String[] args) {
-//		Person worker = new Person() {
-//			void wake() {
-//				System.out.println("Wake up at 6!!");
-//				Work();
-//			}
-//			
-//			void Work( ) {
-//				System.out.println("Go to work!!");
-//			}
-//		};
-//		
-//		class Worker extends Person()
-//		worker.Wake();
-//		worker.Work();
+		File file = new File("Temp.txt");
+		int ch;
 		
-		NPCGenerator npc = new NPCGenerator();
-//		npc.worker.Wake();
-		npc.GeneratorWalker();
-	}
+		try {
+			FileReader reader = new FileReader("Temp.txt");
+			ch = reader.read();
+		} catch (Exception e) {
+			System.out.println("Error!!!");
+		}
+		try {
+			FileOutputStream os = new FileOutputStream("team.txt");
+			os.write(123);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+//		} catch (FileNotFoundException e) {
+//			System.out.println("Error!!!");
+//		} catch (IOException e) {
+//			e.printStackTrace();
+		}
 
 }
