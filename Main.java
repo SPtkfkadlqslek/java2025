@@ -1,32 +1,29 @@
-package exam06;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
+package dec1;
 
 public class Main {
+
 	public static void main(String[] args) {
-		File file = new File("Temp.txt");
-		int ch;
+//		String str1 = "Hi";
+//		String str2 = str1;
+//		
+//		str1 += "!!!";
+//		
+//		System.out.println(str1);
+//		System.out.println(str2);
+//		
+//		
+//		System.out.println(str1 == str2);
 		
-		try {
-			FileReader reader = new FileReader("Temp.txt");
-			ch = reader.read();
-		} catch (Exception e) {
-			System.out.println("Error!!!");
-		}
-		try {
-			FileOutputStream os = new FileOutputStream("team.txt");
-			os.write(123);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-//		} catch (FileNotFoundException e) {
-//			System.out.println("Error!!!");
-//		} catch (IOException e) {
-//			e.printStackTrace();
-		}
+		Integer a =10;
+		AddVal(a);
+		
+		System.out.println(a);
+
+	}
+	
+	static void AddVal (Integer a) {
+		a += 10;
+		System.out.println("AddVal : " + a);
+	}
 
 }
