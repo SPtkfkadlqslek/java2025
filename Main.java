@@ -1,29 +1,17 @@
-package dec1;
+package exam06;
 
 public class Main {
 
 	public static void main(String[] args) {
-//		String str1 = "Hi";
-//		String str2 = str1;
-//		
-//		str1 += "!!!";
-//		
-//		System.out.println(str1);
-//		System.out.println(str2);
-//		
-//		
-//		System.out.println(str1 == str2);
+		PrintThread3 thread = new PrintThread3();
+		thread.start();
 		
-		Integer a =10;
-		AddVal(a);
+		try { 
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {}
 		
-		System.out.println(a);
-
-	}
-	
-	static void AddVal (Integer a) {
-		a += 10;
-		System.out.println("AddVal : " + a);
+		//thread.SetStop(true);
+		thread.interrupt();
 	}
 
 }
